@@ -1,0 +1,270 @@
+/*!
+ * @author Mohamed Muntasir
+ * @link https://github.com/devmotheg
+ */
+
+/* General */
+
+@import url("https://www.googleapis.com/css?family=Quicksand");
+
+:root {
+  --main-bg-color: #1a1a1a;
+  --main-font-color: white;
+  --secondary-font-color: #aaa;
+  --light-white: #eee;
+  --light-green: #33b75c;
+  --light-red: #b73333;
+  --container-width: 1440px;
+  --font-main-stack: Quicksand, sans-serif;
+  --transition-duration: 0.3s;
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main-stack);
+  line-height: 1.5;
+  transition: var(--transition-duration) all ease;
+  background: linear-gradient(to bottom, var(--light-green), #100206);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-width: 350px;
+  min-height: 100vh;
+}
+
+body::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-font-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+
+.container {
+  max-width: var(--container-width);
+  margin: auto;
+}
+
+/* Track bar */
+
+.track-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: black;
+  width: 100%;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.track-bar__fill {
+  background: var(--light-green);
+  height: 0.4rem;
+  width: 0;
+  transition: var(--transition-duration);
+}
+
+/* Content */
+
+.player {
+  display: block;
+}
+
+/** Medium devices (tablets, 768px and up) **/
+@media (min-width: 768px) {
+  .player {
+    display: flex;
+  }
+}
+
+/* Header */
+
+.player__header {
+  padding: 1.4rem;
+  text-align: center;
+  color: var(--main-font-color);
+  flex: 1;
+  align-self: center;
+}
+
+.player__img {
+  width: 100%;
+  display: block;
+}
+
+.player__name {
+  text-transform: capitalize;
+}
+
+.player__count-wrapper {
+  color: var(--secondary-font-color);
+  margin: 0 0 0.8rem;
+}
+
+.player__count-wrapper,
+.button {
+  text-transform: uppercase;
+}
+
+.player__volume {
+  background: var(--secondary-font-color);
+  width: 50%;
+  margin: 0 auto 1rem;
+  cursor: grab;
+  border-radius: 1rem;
+  transition: var(--transition-duration);
+  opacity: 0.8;
+}
+
+.--grabbing {
+  cursor: grabbing;
+}
+
+.player__volume:hover {
+  opacity: 1;
+}
+
+.player__volume-range {
+  height: 0.8rem;
+  background-color: var(--light-green);
+  width: 100%;
+  border-radius: 1rem;
+  position: relative;
+  transition: var(--transition-duration);
+}
+
+.player__volume-range::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  display: block;
+  background-color: inherit;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+}
+
+.button {
+  font-family: inherit;
+  color: inherit;
+  font-size: 0.7rem;
+  border-radius: 2rem;
+  padding: 0.8rem 3.8rem;
+  opacity: 0.8;
+  border: none;
+  outline: none;
+  transition: var(--transition-duration) all ease;
+  font-weight: bold;
+  background: var(--light-green);
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.--red {
+  background: var(--light-red);
+}
+
+.error-paragraph {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 0.5rem;
+  color: var(--light-red);
+  font-weight: bold;
+  transition: var(--transition-duration) all ease;
+}
+
+.error-paragraph--display {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Body */
+
+.player__body {
+  flex: 2;
+  padding: 1.4rem;
+}
+
+.player__playlist {
+  overflow: auto;
+  max-height: 90vh;
+}
+
+.song {
+  list-style: none;
+  display: flex;
+  padding: 0.78rem 1rem;
+  transition: var(--transition-duration) all ease;
+}
+
+.song:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.song--active {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.song--active i,
+.song--active .song__duration {
+  color: var(--light-green);
+}
+
+.song__play-pause {
+  color: var(--main-font-color);
+  margin-right: 1rem;
+}
+
+.song__play-pause i {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-duration) all ease;
+}
+
+.song__name {
+  color: var(--main-font-color);
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.song__artist,
+.song__duration {
+  color: var(--secondary-font-color);
+}
+
+.song__duration {
+  margin-top: 0.15rem;
+  margin-left: auto;
+  font-weight: bold;
+  transition: var(--transition-duration) all ease;
+}

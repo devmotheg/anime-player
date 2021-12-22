@@ -1,0 +1,53 @@
+<!--!
+  @author Mohamed Muntasir
+  @link https://github.com/devmotheg
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Anime Player</title>
+</head>
+
+<body>
+  <main>
+    <!-- Container -->
+    <div class="container">
+      <!-- Track bar -->
+      <div class="track-bar">
+        <div class="track-bar__fill"></div>
+      </div>
+      <!-- Content -->
+      <div class="player">
+        <!-- Header -->
+        <div class="player__header">
+          <div class="player__details">
+            <a href="https://github.com/devmotheg" target="_blank">Designed by Mohamed Muntasir</a>
+            <h1 class="player__name">anime player</h1>
+            <div class="player__count-wrapper">
+              <span class="player__count"></span> openings
+            </div>
+          </div>
+          <div class="player__volume">
+            <div class="player__volume-range"></div>
+          </div>
+          <button class="button">play</button>
+          <p class="error-paragraph">Please select an opening first!</p>
+        </div>
+        <!-- Body -->
+        <div class="player__body">
+          <ul class="player__playlist"></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/app.js" type="module"></script>
+</body>
+
+</html>
