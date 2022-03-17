@@ -1,5 +1,7 @@
 # Anime Player
 
+Challenge from Tenzin's list of projects (⌐■_■)
+
 One of my best projects so far because, one... I like anime, and two... it taught me A LOT about APIs and modules.
 
 ## Fair use
